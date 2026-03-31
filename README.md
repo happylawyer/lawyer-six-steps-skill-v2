@@ -1,6 +1,6 @@
-# lawyer-six-steps
+# 律师办案六步法 / lawyer-six-steps
 
-六步法律师办案工具。
+律师办案六步法。
 
 > 安装：如果你已经接入 OpenClaw 或微信 ClawBot，直接在对话里说 `请用 ClawHub 安装 lawyer-six-steps`。
 > 使用：正式命令建议用 `/lawyer-six-steps`。
