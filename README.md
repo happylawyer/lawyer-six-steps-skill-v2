@@ -43,6 +43,36 @@ bash scripts/install.sh openclaw
 bash scripts/install.sh agents
 ```
 
+## OpenClaw / 微信 ClawBot 安装
+
+给别人转发时，直接把下面这一段发过去即可。
+
+如果对方使用的是 OpenClaw，或者微信 ClawBot 的底层运行时就是 OpenClaw，在运行那台机器上执行：
+
+```bash
+git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git ~/.openclaw/skills/lawyer-six-steps
+```
+
+如果对方的环境统一从通用 skills 目录读取，也可以执行：
+
+```bash
+git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git ~/.agents/skills/lawyer-six-steps
+```
+
+如果目录已经存在，更新命令是：
+
+```bash
+git -C ~/.openclaw/skills/lawyer-six-steps pull
+```
+
+安装或更新后：
+
+- 重启 OpenClaw 或微信 ClawBot 所在的进程
+- 正式命令使用 `/lawyer-six-steps`
+- 也可以直接说 `六步法`、`帮我分析一个案件`
+
+注意：微信 ClawBot 不是“装在微信里”，而是装在运行 ClawBot/OpenClaw 的那台电脑或服务器上。
+
 ## 各客户端安装方式
 
 ### Claude Code
