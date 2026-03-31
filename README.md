@@ -2,23 +2,28 @@
 
 六步法律师办案工具。
 
-这是一个基于 `SKILL.md` 的律师办案 skill，适用于支持 AgentSkills / `SKILL.md` 目录约定的客户端，例如 Claude Code、Codex、OpenClaw，以及其他兼容客户端。
+这是一个基于 `SKILL.md` 的律师办案 skill，适用于支持 AgentSkills / `SKILL.md` 目录约定的客户端，例如 OpenClaw 及其接入渠道。
 
-## 给别人复制的一行安装
+## 安装方式
 
-如果对方使用的是 OpenClaw，或者微信 ClawBot 的底层运行时就是 OpenClaw，直接让对方在运行那台机器上执行：
+ClawHub 专用发布版优先面向 OpenClaw / 微信 ClawBot 的对话式安装。
 
-```bash
-git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git ~/.openclaw/skills/lawyer-six-steps
-```
+如果对方已经接入 OpenClaw 或微信 ClawBot，直接在对话里说：
 
-如果对方的环境统一从通用 skills 目录读取，也可以执行：
+- `请用 ClawHub 安装 lawyer-six-steps`
+- `帮我安装 lawyer-six-steps 这个 skill`
+- `用 ClawHub 搜索并安装 lawyer-six-steps`
 
-```bash
-git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git ~/.agents/skills/lawyer-six-steps
-```
+安装完成后，正式命令建议使用：
 
-安装后重启 OpenClaw 或微信 ClawBot 对应进程即可。
+- `/lawyer-six-steps`
+
+也可以直接用自然语言触发：
+
+- `六步法`
+- `帮我分析一个案件`
+- `案件预判`
+- `办案分析`
 
 ## 能做什么
 
@@ -33,133 +38,9 @@ git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git ~/.agents
 
 六步分析完成后，还会强制收口生成一份可直接用于汇报、留档和团队讨论的**案件分析报告**。这不是“第七步”，而是六步法的最终产出。
 
-## 快速安装
-
-先把仓库 clone 下来，再用安装脚本把它链接到对应客户端的 skills 目录：
-
-```bash
-git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git
-cd lawyer-six-steps-skill-v2
-bash scripts/install.sh all
-```
-
-`all` 会同时安装到这些目录：
-
-- `~/.agents/skills/lawyer-six-steps`
-- `~/.claude/skills/lawyer-six-steps`
-- `~/.codex/skills/lawyer-six-steps`
-- `~/.openclaw/skills/lawyer-six-steps`
-
-如果你只想装到单个客户端：
-
-```bash
-bash scripts/install.sh claude
-bash scripts/install.sh codex
-bash scripts/install.sh openclaw
-bash scripts/install.sh agents
-```
-
-## OpenClaw / 微信 ClawBot 安装
-
-给别人转发时，直接把下面这一段发过去即可。
-
-如果对方使用的是 OpenClaw，或者微信 ClawBot 的底层运行时就是 OpenClaw，在运行那台机器上执行：
-
-```bash
-git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git ~/.openclaw/skills/lawyer-six-steps
-```
-
-如果对方的环境统一从通用 skills 目录读取，也可以执行：
-
-```bash
-git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git ~/.agents/skills/lawyer-six-steps
-```
-
-如果目录已经存在，更新命令是：
-
-```bash
-git -C ~/.openclaw/skills/lawyer-six-steps pull
-```
-
-安装或更新后：
-
-- 重启 OpenClaw 或微信 ClawBot 所在的进程
-- 正式命令使用 `/lawyer-six-steps`
-- 也可以直接说 `六步法`、`帮我分析一个案件`
-
-注意：微信 ClawBot 不是“装在微信里”，而是装在运行 ClawBot/OpenClaw 的那台电脑或服务器上。
-
-## 各客户端安装方式
-
-### Claude Code
-
-如果你的环境支持 `npx skills add`，可以直接从 GitHub 安装：
-
-```bash
-npx skills add https://github.com/happylawyer/lawyer-six-steps-skill-v2 --yes --global
-```
-
-也可以用上面的 `bash scripts/install.sh claude`。
-
-### Codex
-
-Codex 用户可以直接安装到本地 skills 目录：
-
-```bash
-git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git \
-  ~/.codex/skills/lawyer-six-steps
-```
-
-或者在 clone 仓库后执行：
-
-```bash
-bash scripts/install.sh codex
-```
-
-安装后建议重启 Codex，确保新 skill 被扫描到。
-
-### OpenClaw
-
-OpenClaw 用户可以安装到 OpenClaw 自己的技能目录：
-
-```bash
-git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git \
-  ~/.openclaw/skills/lawyer-six-steps
-```
-
-或者使用：
-
-```bash
-bash scripts/install.sh openclaw
-```
-
-如果你的 OpenClaw 配置会扫描通用目录，也可以安装到：
-
-```bash
-git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git \
-  ~/.agents/skills/lawyer-six-steps
-```
-
-### 其他兼容客户端
-
-只要客户端支持从某个目录读取 `SKILL.md`，把本仓库放到它的 skills 目录下即可。
-
 ## 使用
 
-在支持 slash command 的客户端中，正式命令建议使用：
-
-```text
-/lawyer-six-steps
-```
-
-也可以直接用自然语言触发：
-
-- `帮我分析一个案件`
-- `案件预判`
-- `办案分析`
-- `六步法`
-
-为兼容性起见，推荐把 `/lawyer-six-steps` 作为唯一正式 slash 命令使用；中文“六步法”保留为自然语言触发词，不依赖客户端是否支持中文 slash 别名。
+推荐把 `/lawyer-six-steps` 作为唯一正式 slash 命令使用；中文“六步法”保留为自然语言触发词，不依赖客户端是否支持中文 slash 别名。
 
 ## 工作流程
 
@@ -184,12 +65,12 @@ git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git \
 
 ## 发布建议
 
-如果你准备公开发布这个 skill，推荐：
+如果你准备继续公开迭代这个 skill，推荐：
 
 1. 仓库名使用 `lawyer-six-steps-skill-v2`
 2. 保持 `SKILL.md` 位于仓库根目录
-3. 发布后把 README 里的仓库地址替换成你自己的 GitHub 用户名或组织名
-4. 打一个版本 tag，方便别人锁定版本安装
+3. ClawHub 版本与仓库版本保持同步
+4. 每次发布前复查 `SKILL.md` 是否存在高副作用动作
 
 ## License
 
