@@ -8,8 +8,6 @@
 
 这是一个基于 `SKILL.md` 的律师办案 skill，适用于支持 AgentSkills / `SKILL.md` 目录约定的客户端，例如 OpenClaw 及其接入渠道。
 
-![律师办案六步法流程图](assets/lawyer-six-steps-diagram.png)
-
 ## 安装方式
 
 ClawHub 专用发布版优先面向 OpenClaw / 微信 ClawBot 的对话式安装。
@@ -53,6 +51,10 @@ ClawHub 专用发布版优先面向 OpenClaw / 微信 ClawBot 的对话式安装
 ```text
 案件录入 → 事实梳理 → 法律分析 → 法理研究 → 案例检索 → 裁判规则总结 → 结果预判 → 案件分析报告
 ```
+
+流程图如下：
+
+![律师办案六步法流程图](assets/lawyer-six-steps-diagram.png)
 
 每个阶段都是交互式的，会在关键节点停下来等待确认和补充。第六步完成后，skill 会继续整理并落地一份案件分析报告。
 
