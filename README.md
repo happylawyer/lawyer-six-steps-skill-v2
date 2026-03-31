@@ -100,18 +100,20 @@ git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git \
 
 ## 使用
 
-在支持 slash command 的客户端中输入：
+在支持 slash command 的客户端中，正式命令建议使用：
 
 ```text
 /lawyer-six-steps
 ```
 
-或者直接说：
+也可以直接用自然语言触发：
 
 - `帮我分析一个案件`
 - `案件预判`
 - `办案分析`
-- `/六步法`
+- `六步法`
+
+为兼容性起见，推荐把 `/lawyer-six-steps` 作为唯一正式 slash 命令使用；中文“六步法”保留为自然语言触发词，不依赖客户端是否支持中文 slash 别名。
 
 ## 工作流程
 
