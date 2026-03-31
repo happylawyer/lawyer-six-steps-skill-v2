@@ -4,6 +4,22 @@
 
 这是一个基于 `SKILL.md` 的律师办案 skill，适用于支持 AgentSkills / `SKILL.md` 目录约定的客户端，例如 Claude Code、Codex、OpenClaw，以及其他兼容客户端。
 
+## 给别人复制的一行安装
+
+如果对方使用的是 OpenClaw，或者微信 ClawBot 的底层运行时就是 OpenClaw，直接让对方在运行那台机器上执行：
+
+```bash
+git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git ~/.openclaw/skills/lawyer-six-steps
+```
+
+如果对方的环境统一从通用 skills 目录读取，也可以执行：
+
+```bash
+git clone https://github.com/happylawyer/lawyer-six-steps-skill-v2.git ~/.agents/skills/lawyer-six-steps
+```
+
+安装后重启 OpenClaw 或微信 ClawBot 对应进程即可。
+
 ## 能做什么
 
 通过六个阶段系统化分析案件，帮助中国律师高效办案：
