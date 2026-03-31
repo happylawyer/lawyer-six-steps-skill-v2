@@ -2,6 +2,10 @@
 
 六步法律师办案工具。
 
+> 安装：如果你已经接入 OpenClaw 或微信 ClawBot，直接在对话里说 `请用 ClawHub 安装 lawyer-six-steps`。
+> 使用：正式命令建议用 `/lawyer-six-steps`。
+> 自然语言触发：`六步法`、`帮我分析一个案件`、`案件预判`。
+
 这是一个基于 `SKILL.md` 的律师办案 skill，适用于支持 AgentSkills / `SKILL.md` 目录约定的客户端，例如 OpenClaw 及其接入渠道。
 
 ## 安装方式
